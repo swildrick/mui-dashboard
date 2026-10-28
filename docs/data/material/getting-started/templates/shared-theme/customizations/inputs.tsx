@@ -18,7 +18,7 @@ export const inputsCustomizations: Components<Theme> = {
     styleOverrides: {
       root: ({ theme }) => ({
         boxSizing: 'border-box',
-        transition: 'all 100ms ease-in',
+        transition: 'all 400ms ease-in',
         '&:focus-visible': {
           outline: `3px solid ${alpha(theme.palette.primary.main, 0.5)}`,
           outlineOffset: '2px',
