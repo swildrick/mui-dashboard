@@ -116,6 +116,7 @@ Overrides change the defaults of these MUI components. Do not restyle them local
   - `contained` + `secondary`: brand gradient (brand 400 to 500) with white text.
   - `outlined` (gray 200 border, translucent gray 50 fill) and `text` have a base style plus a separate `secondary` style each.
 - `IconButton`: small 2.25rem square, medium 2.5rem square.
+- Hover speed: `Button` and `IconButton` transition their colors, borders and shadow over `400ms ease-in`, set in their own overrides. `ButtonBase` also sets `all 400ms ease-in`, but components that define their own transition (Button, IconButton, ListItemButton, Checkbox) override it.
 - `OutlinedInput`: small 2.25rem high, medium 2.5rem high.
 - `Chip`: pill shape, 600-weight label. `color` `default` (gray), `success` and `error` have custom fills for light and dark.
 - `Card`: padding 16, gap 16, 1px `divider` border, no shadow, background gray 50 (gray 800 in dark mode). `variant="outlined"` uses a white background (`alpha(gray[900], 0.4)` in dark mode). `CardContent`, `CardHeader` and `CardActions` have zero padding; the `Card` provides it.

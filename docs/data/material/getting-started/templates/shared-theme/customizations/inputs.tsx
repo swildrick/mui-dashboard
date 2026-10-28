@@ -32,6 +32,7 @@ export const inputsCustomizations: Components<Theme> = {
         boxShadow: 'none',
         borderRadius: (theme.vars || theme).shape.borderRadius,
         textTransform: 'none',
+        transition: 'background-color 400ms ease-in, box-shadow 400ms ease-in, border-color 400ms ease-in, color 400ms ease-in',
         variants: [
           {
             props: {
@@ -226,6 +227,7 @@ export const inputsCustomizations: Components<Theme> = {
         boxShadow: 'none',
         borderRadius: (theme.vars || theme).shape.borderRadius,
         textTransform: 'none',
+        transition: 'background-color 400ms ease-in, border-color 400ms ease-in',
         fontWeight: theme.typography.fontWeightMedium,
         letterSpacing: 0,
         color: (theme.vars || theme).palette.text.primary,
