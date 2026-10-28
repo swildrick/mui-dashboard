@@ -4,7 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Design system: read first
 
-Before changing anything that touches UI, styling, theme, colors, spacing, typography or components, read [app/src/design-system.md](app/src/design-system.md) and follow it. It lists the real tokens, component overrides and usage rules. After the change, run the ds-drift scan (below) and check that no new findings appeared.
+For any task that touches the design system (UI, styling, theme, colors, spacing, typography, tokens, components, stories or the Figma file), first read both of these and follow them:
+
+- [app/src/design-system.md](app/src/design-system.md): the real tokens, component overrides and usage rules.
+- [app/src/design-system.map.json](app/src/design-system.map.json): for each Figma component, its node ID, code import and file, theme override, Storybook story IDs, and the matching variants, props and tokens, with known mismatches.
+
+When a component, story, token or Figma node changes, update its map entry in the same change. After the change, run the ds-drift scan (below) and check that no new findings appeared.
 
 Storybook (`app/src/stories/`) documents the same system: one story file per component in the Figma file, each linked to its Figma node, plus a tokens page. When a component's variants, props or styles change, update its story. When Storybook is running, the `storybook` MCP server (`.mcp.json`) exposes its docs and stories.
 

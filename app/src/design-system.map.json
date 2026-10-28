@@ -1,0 +1,387 @@
+{
+  "description": "Maps each component in the Figma design system file to its code component, Storybook stories, variants, props and tokens. Read with app/src/design-system.md. Update an entry whenever its component, story, token or Figma node changes.",
+  "conventions": {
+    "codePaths": "Local paths are relative to docs/data/material/getting-started/templates/ (the @templates alias). Every .tsx/.ts file has a .js twin.",
+    "figmaVariables": "Written as <collection>:<variable name>, e.g. components:MuiButton/text/color.",
+    "tokenSources": "Code sources name the object path in the override, not line numbers. '/' separates light / dark values.",
+    "match": "exact = same name and values; renamed = same meaning, different name; figma-only or code-only = exists on one side only; approximate = modelled differently."
+  },
+  "figma": {
+    "fileKey": "bkJTRjUSYRIpiB1AGq73an",
+    "fileUrl": "https://www.figma.com/design/bkJTRjUSYRIpiB1AGq73an/MUI-Dashboard-Design-System-v9.5.0",
+    "pages": { "Foundations": "0:1", "Atoms": "1:2", "Molecules": "1:3", "Organisms": "1:4", "Screens": "1:5" }
+  },
+  "storybook": {
+    "localUrl": "http://localhost:6007",
+    "liveUrl": "https://swildrick.github.io/mui-dashboard/storybook/",
+    "storiesDir": "app/src/stories",
+    "figmaLinks": "app/src/stories/figma.ts"
+  },
+  "tokens": {
+    "storybookDocsId": "foundations-tokens--docs",
+    "collections": [
+      { "figma": "primitives", "modes": ["value"], "count": 50, "code": "brand, gray, green, orange, red in shared-theme/themePrimitives.ts", "match": "exact" },
+      { "figma": "palette", "modes": ["light", "dark"], "count": 26, "code": "colorSchemes.light.palette / colorSchemes.dark.palette in shared-theme/themePrimitives.ts", "match": "exact", "note": "palette:action/disabled is MUI's default palette.action.disabled, not set in themePrimitives.ts. text/warning has no dark value in code; Figma repeats the light value." },
+      { "figma": "components", "modes": ["light", "dark"], "count": 48, "code": "Values inside the component overrides in shared-theme/customizations/ and StatCard.tsx trendColors", "match": "figma-only", "note": "Not tokens in code. Each variable is named after the override path it copies." },
+      { "figma": "spacing", "modes": ["value"], "count": 7, "code": "theme.spacing(n), MUI default 8px unit", "match": "renamed", "note": "spacing/0-25, 0-5, 1, 1-5, 2, 3, 5 = theme.spacing(0.25 … 5); Figma does not allow '.' in names." },
+      { "figma": "shape", "modes": ["value"], "count": 1, "code": "shape.borderRadius (8) in shared-theme/themePrimitives.ts", "match": "exact" }
+    ],
+    "textStyles": { "figma": "typography/h1 … typography/caption (11)", "code": "typography in shared-theme/themePrimitives.ts", "match": "approximate", "note": "Where the code sets no line height or weight, Figma uses MUI defaults." },
+    "effectStyles": [
+      { "figma": "shadows/baseShadow/light, shadows/baseShadow/dark", "code": "colorSchemes.*.palette.baseShadow, used as theme.shadows[1]", "match": "renamed", "note": "One value per color scheme in code; two styles in Figma." },
+      { "figma": "shadows/insetHighlightShadow", "code": "insetHighlightShadow in shared-theme/themePrimitives.ts", "match": "exact" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button",
+      "status": "mapped",
+      "figma": { "nodeId": "5:146", "type": "COMPONENT_SET", "page": "Atoms", "variantCount": 24, "url": "https://www.figma.com/design/bkJTRjUSYRIpiB1AGq73an/MUI-Dashboard-Design-System-v9.5.0?node-id=5-146" },
+      "code": { "import": "@mui/material/Button", "export": "default", "file": null, "overrides": "shared-theme/customizations/inputs.tsx › inputsCustomizations.MuiButton (and MuiButtonBase)" },
+      "storybook": {
+        "docsId": "atoms-button--docs",
+        "storyIds": ["atoms-button--playground", "atoms-button--all-variants-small", "atoms-button--all-variants-medium", "atoms-button--contained-primary", "atoms-button--contained-secondary", "atoms-button--outlined-primary", "atoms-button--outlined-secondary", "atoms-button--text-primary", "atoms-button--text-secondary", "atoms-button--with-icons", "atoms-button--hover", "atoms-button--disabled"]
+      },
+      "variants": {
+        "axes": [
+          { "figma": "variant", "code": "variant", "values": ["contained", "outlined", "text"], "match": "exact" },
+          { "figma": "color", "code": "color", "values": ["primary", "secondary"], "match": "exact", "note": "The theme styles only primary and secondary." },
+          { "figma": "size", "code": "size", "values": ["small", "medium"], "match": "exact", "note": "size=\"large\" is not styled by the theme." },
+          { "figma": "state", "code": null, "values": ["default", "hover"], "match": "figma-only", "note": "CSS :hover in code; shown in Storybook with pseudo-states (atoms-button--hover)." }
+        ],
+        "nodes": [
+          { "figma": "variant=contained, color=primary, size=medium, state=default", "nodeId": "5:14", "storyId": "atoms-button--contained-primary" },
+          { "figma": "variant=contained, color=secondary, size=medium, state=default", "nodeId": "5:38", "storyId": "atoms-button--contained-secondary" },
+          { "figma": "variant=outlined, color=primary, size=medium, state=default", "nodeId": "5:62", "storyId": "atoms-button--outlined-primary" },
+          { "figma": "variant=outlined, color=secondary, size=medium, state=default", "nodeId": "5:86", "storyId": "atoms-button--outlined-secondary" },
+          { "figma": "variant=text, color=primary, size=medium, state=default", "nodeId": "5:110", "storyId": "atoms-button--text-primary" },
+          { "figma": "variant=text, color=secondary, size=medium, state=default", "nodeId": "5:134", "storyId": "atoms-button--text-secondary" }
+        ]
+      },
+      "props": [
+        { "figma": "children", "figmaType": "TEXT", "code": "children", "match": "exact" },
+        { "figma": "startIcon", "figmaType": "INSTANCE_SWAP", "code": "startIcon", "match": "exact" },
+        { "figma": "startIcon visible", "figmaType": "BOOLEAN", "code": null, "match": "figma-only", "note": "In code, passing startIcon shows it." },
+        { "figma": "endIcon", "figmaType": "INSTANCE_SWAP", "code": "endIcon", "match": "exact" },
+        { "figma": "endIcon visible", "figmaType": "BOOLEAN", "code": null, "match": "figma-only", "note": "In code, passing endIcon shows it." },
+        { "figma": null, "code": "fullWidth", "match": "code-only" },
+        { "figma": null, "code": "disabled", "match": "code-only", "note": "Uses MUI's default disabled styles." }
+      ],
+      "tokens": [
+        { "figma": "components:MuiButton/contained-primary/color", "code": "'white' / 'black'", "source": "inputs.tsx › MuiButton.styleOverrides.root.variants[color=primary, variant=contained].color" },
+        { "figma": "components:MuiButton/contained-primary/backgroundColor", "code": "gray[900] / gray[50]", "source": "… variants[color=primary, variant=contained].backgroundColor" },
+        { "figma": "components:MuiButton/contained-primary/gradientStart", "code": "gray[700] / gray[100]", "source": "… variants[color=primary, variant=contained].backgroundImage" },
+        { "figma": "components:MuiButton/contained-primary/gradientEnd", "code": "gray[800] / gray[50]", "source": "… variants[color=primary, variant=contained].backgroundImage" },
+        { "figma": "components:MuiButton/contained-primary/borderColor", "code": "gray[700] / gray[50]", "source": "… variants[color=primary, variant=contained].border" },
+        { "figma": "components:MuiButton/contained-primary/hover/backgroundColor", "code": "gray[700] / gray[300]", "source": "… variants[color=primary, variant=contained]['&:hover']" },
+        { "figma": "components:MuiButton/contained-secondary/color", "code": "'white'", "source": "… variants[color=secondary, variant=contained].color" },
+        { "figma": "components:MuiButton/contained-secondary/backgroundColor", "code": "brand[300]", "source": "… variants[color=secondary, variant=contained].backgroundColor" },
+        { "figma": "components:MuiButton/contained-secondary/gradientStart", "code": "alpha(brand[400], 0.8)", "source": "… variants[color=secondary, variant=contained].backgroundImage" },
+        { "figma": "components:MuiButton/contained-secondary/gradientEnd", "code": "brand[500]", "source": "… variants[color=secondary, variant=contained].backgroundImage" },
+        { "figma": "components:MuiButton/contained-secondary/borderColor", "code": "brand[500]", "source": "… variants[color=secondary, variant=contained].border" },
+        { "figma": "components:MuiButton/contained-secondary/hover/backgroundColor", "code": "brand[700]", "source": "… variants[color=secondary, variant=contained]['&:hover']" },
+        { "figma": "components:MuiButton/outlined/color", "code": "palette.text.primary", "source": "… variants[variant=outlined].color" },
+        { "figma": "components:MuiButton/outlined/borderColor", "code": "gray[200] / gray[700]", "source": "… variants[variant=outlined].borderColor" },
+        { "figma": "components:MuiButton/outlined/backgroundColor", "code": "alpha(gray[50], 0.3) / gray[800]", "source": "… variants[variant=outlined].backgroundColor" },
+        { "figma": "components:MuiButton/outlined/hover/backgroundColor", "code": "gray[100] / gray[900]", "source": "… variants[variant=outlined]['&:hover']" },
+        { "figma": "components:MuiButton/outlined/hover/borderColor", "code": "gray[300] / gray[600]", "source": "… variants[variant=outlined]['&:hover']" },
+        { "figma": "components:MuiButton/outlined-secondary/color", "code": "brand[700] / brand[50]", "source": "… variants[color=secondary, variant=outlined].color" },
+        { "figma": "components:MuiButton/outlined-secondary/borderColor", "code": "brand[200] / brand[900]", "source": "… variants[color=secondary, variant=outlined].borderColor" },
+        { "figma": "components:MuiButton/outlined-secondary/backgroundColor", "code": "brand[50] / alpha(brand[900], 0.3)", "source": "… variants[color=secondary, variant=outlined].backgroundColor" },
+        { "figma": "components:MuiButton/outlined-secondary/hover/backgroundColor", "code": "brand[100] / alpha(brand[900], 0.6)", "source": "… variants[color=secondary, variant=outlined]['&:hover']" },
+        { "figma": "components:MuiButton/outlined-secondary/hover/borderColor", "code": "brand[400] / brand[700]", "source": "… variants[color=secondary, variant=outlined]['&:hover']" },
+        { "figma": "components:MuiButton/text/color", "code": "gray[600] / gray[50]", "source": "… variants[variant=text].color" },
+        { "figma": "components:MuiButton/text/hover/backgroundColor", "code": "gray[100] / gray[700]", "source": "… variants[variant=text]['&:hover']" },
+        { "figma": "components:MuiButton/text-secondary/color", "code": "brand[700] / brand[100]", "source": "… variants[color=secondary, variant=text].color" },
+        { "figma": "components:MuiButton/text-secondary/hover/backgroundColor", "code": "alpha(brand[100], 0.5) / alpha(brand[900], 0.5)", "source": "… variants[color=secondary, variant=text]['&:hover']" },
+        { "figma": "shape:borderRadius", "code": "shape.borderRadius", "source": "MuiButton.styleOverrides.root.borderRadius" },
+        { "figma": "spacing:spacing/1-5", "code": "padding '8px 12px' (size=small)", "source": "MuiButton variants[size=small].padding" },
+        { "figma": "spacing:spacing/2", "code": "MUI default horizontal padding (size=medium, contained and outlined)" },
+        { "figma": "spacing:spacing/1", "code": "MUI default icon margin and text-variant padding" }
+      ],
+      "mismatches": [
+        "Figma has a state=hover axis; code uses CSS :hover.",
+        "Figma has startIcon visible / endIcon visible booleans; code shows an icon when it is passed.",
+        "Code has inset box shadows on contained buttons; Figma does not reproduce them.",
+        "Code has fullWidth and disabled; Figma does not model them.",
+        "Code animates hover over 400ms ease-in (MuiButton transition); Figma has no motion.",
+        "The Figma label is not linked to a text style (Inter Medium 14 set directly)."
+      ]
+    },
+    {
+      "name": "IconButton",
+      "status": "mapped",
+      "figma": { "nodeId": "6:14", "type": "COMPONENT_SET", "page": "Atoms", "variantCount": 4, "url": "https://www.figma.com/design/bkJTRjUSYRIpiB1AGq73an/MUI-Dashboard-Design-System-v9.5.0?node-id=6-14" },
+      "code": { "import": "@mui/material/IconButton", "export": "default", "file": null, "overrides": "shared-theme/customizations/inputs.tsx › inputsCustomizations.MuiIconButton" },
+      "storybook": { "docsId": "atoms-iconbutton--docs", "storyIds": ["atoms-iconbutton--small", "atoms-iconbutton--medium", "atoms-iconbutton--hover"] },
+      "variants": {
+        "axes": [
+          { "figma": "size", "code": "size", "values": ["small", "medium"], "match": "exact" },
+          { "figma": "state", "code": null, "values": ["default", "hover"], "match": "figma-only", "note": "CSS :hover in code (atoms-iconbutton--hover)." }
+        ],
+        "nodes": [
+          { "figma": "size=small, state=default", "nodeId": "6:2", "storyId": "atoms-iconbutton--small" },
+          { "figma": "size=medium, state=default", "nodeId": "6:8", "storyId": "atoms-iconbutton--medium" }
+        ]
+      },
+      "props": [
+        { "figma": "children", "figmaType": "INSTANCE_SWAP", "code": "children", "match": "exact", "note": "The icon element." }
+      ],
+      "tokens": [
+        { "figma": "components:MuiIconButton/root/color", "code": "palette.text.primary", "source": "inputs.tsx › MuiIconButton.styleOverrides.root.color" },
+        { "figma": "components:MuiIconButton/root/borderColor", "code": "gray[200] / gray[700]", "source": "… root.borderColor" },
+        { "figma": "components:MuiIconButton/root/backgroundColor", "code": "alpha(gray[50], 0.3) / gray[800]", "source": "… root.backgroundColor" },
+        { "figma": "components:MuiIconButton/root/hover/backgroundColor", "code": "gray[100] / gray[900]", "source": "… root['&:hover']" },
+        { "figma": "components:MuiIconButton/root/hover/borderColor", "code": "gray[300] / gray[600]", "source": "… root['&:hover']" },
+        { "figma": "shape:borderRadius", "code": "shape.borderRadius", "source": "… root.borderRadius" },
+        { "figma": "spacing:spacing/0-5", "code": "padding '0.25rem' (size=small)", "source": "… variants[size=small].padding" }
+      ],
+      "mismatches": [
+        "Figma has a state=hover axis; code uses CSS :hover.",
+        "Code animates hover over 400ms ease-in (MuiIconButton transition); Figma has no motion."
+      ]
+    },
+    {
+      "name": "OutlinedInput",
+      "status": "mapped",
+      "figma": { "nodeId": "6:31", "type": "COMPONENT_SET", "page": "Atoms", "variantCount": 4, "url": "https://www.figma.com/design/bkJTRjUSYRIpiB1AGq73an/MUI-Dashboard-Design-System-v9.5.0?node-id=6-31" },
+      "code": { "import": "@mui/material/OutlinedInput", "export": "default", "file": null, "overrides": "shared-theme/customizations/inputs.tsx › inputsCustomizations.MuiOutlinedInput, MuiInputBase, MuiInputAdornment" },
+      "storybook": { "docsId": "atoms-outlinedinput--docs", "storyIds": ["atoms-outlinedinput--small", "atoms-outlinedinput--medium", "atoms-outlinedinput--with-start-adornment", "atoms-outlinedinput--hover", "atoms-outlinedinput--focused"] },
+      "variants": {
+        "axes": [
+          { "figma": "size", "code": "size", "values": ["small", "medium"], "match": "exact" },
+          { "figma": "state", "code": null, "values": ["default", "hover"], "match": "figma-only", "note": "CSS :hover in code (atoms-outlinedinput--hover)." },
+          { "figma": null, "code": "focused (FormControl)", "values": ["focused"], "match": "code-only", "note": "atoms-outlinedinput--focused" }
+        ],
+        "nodes": [
+          { "figma": "size=small, state=default", "nodeId": "6:15", "storyId": "atoms-outlinedinput--small" },
+          { "figma": "size=medium, state=default", "nodeId": "6:23", "storyId": "atoms-outlinedinput--medium" }
+        ]
+      },
+      "props": [
+        { "figma": "placeholder", "figmaType": "TEXT", "code": "placeholder", "match": "exact" },
+        { "figma": "startAdornment", "figmaType": "INSTANCE_SWAP", "code": "startAdornment", "match": "exact", "note": "In code, an <InputAdornment position=\"start\"> wrapping the icon." },
+        { "figma": "startAdornment visible", "figmaType": "BOOLEAN", "code": null, "match": "figma-only", "note": "In code, passing startAdornment shows it." }
+      ],
+      "tokens": [
+        { "figma": "palette:background/default", "code": "palette.background.default", "source": "inputs.tsx › MuiOutlinedInput.styleOverrides.root.backgroundColor" },
+        { "figma": "palette:divider", "code": "palette.divider", "source": "… root.border" },
+        { "figma": "components:MuiOutlinedInput/root/hover/borderColor", "code": "gray[400] / gray[500]", "source": "… root['&:hover'].borderColor" },
+        { "figma": "components:MuiInputBase/input/placeholder/color", "code": "gray[500] at opacity 0.7", "source": "MuiInputBase.styleOverrides.input['&::placeholder']" },
+        { "figma": "components:MuiInputAdornment/root/color", "code": "palette.grey[500] / palette.grey[400]", "source": "MuiInputAdornment.styleOverrides.root.color" },
+        { "figma": "shape:borderRadius", "code": "shape.borderRadius", "source": "MuiOutlinedInput root.borderRadius" },
+        { "figma": "spacing:spacing/1-5", "code": "padding '8px 12px' (horizontal)", "source": "MuiOutlinedInput root.padding" },
+        { "figma": "spacing:spacing/1", "code": "padding '8px 12px' (vertical); InputAdornment margin", "source": "MuiOutlinedInput root.padding" },
+        { "figma": "typography/body1", "code": "typography.body1 (MUI InputBase default)" }
+      ],
+      "mismatches": [
+        "Figma has a state=hover axis; code uses CSS :hover.",
+        "Figma has a startAdornment visible boolean; code shows the adornment when it is passed.",
+        "Code styles the focused state (3px alpha(brand[500], 0.5) outline, brand[400] border); Figma has no focused variant."
+      ]
+    },
+    {
+      "name": "Chip",
+      "status": "mapped",
+      "figma": { "nodeId": "6:44", "type": "COMPONENT_SET", "page": "Atoms", "variantCount": 6, "url": "https://www.figma.com/design/bkJTRjUSYRIpiB1AGq73an/MUI-Dashboard-Design-System-v9.5.0?node-id=6-44" },
+      "code": { "import": "@mui/material/Chip", "export": "default", "file": null, "overrides": "shared-theme/customizations/dataDisplay.tsx › dataDisplayCustomizations.MuiChip" },
+      "storybook": { "docsId": "atoms-chip--docs", "storyIds": ["atoms-chip--default", "atoms-chip--success", "atoms-chip--error-color", "atoms-chip--all-colors-and-sizes"] },
+      "variants": {
+        "axes": [
+          { "figma": "color", "code": "color", "values": ["default", "success", "error"], "match": "exact", "note": "The theme styles only these three." },
+          { "figma": "size", "code": "size", "values": ["small", "medium"], "match": "exact", "note": "defaultProps.size is small." }
+        ],
+        "nodes": [
+          { "figma": "color=default, size=small", "nodeId": "6:32", "storyId": "atoms-chip--default" },
+          { "figma": "color=success, size=small", "nodeId": "6:36", "storyId": "atoms-chip--success" },
+          { "figma": "color=error, size=small", "nodeId": "6:40", "storyId": "atoms-chip--error-color" }
+        ]
+      },
+      "props": [
+        { "figma": "label", "figmaType": "TEXT", "code": "label", "match": "exact" },
+        { "figma": null, "code": "icon", "match": "code-only", "note": "The theme styles chip icons per color; the template never passes one." }
+      ],
+      "tokens": [
+        { "figma": "components:MuiChip/default/borderColor", "code": "gray[200] / gray[700]", "source": "dataDisplay.tsx › MuiChip.styleOverrides.root.variants[color=default].borderColor" },
+        { "figma": "components:MuiChip/default/backgroundColor", "code": "gray[100] / gray[800]", "source": "… variants[color=default].backgroundColor" },
+        { "figma": "components:MuiChip/default/label/color", "code": "gray[500] / gray[300]", "source": "… variants[color=default]['& .MuiChip-label'].color" },
+        { "figma": "components:MuiChip/success/borderColor", "code": "green[200] / green[800]", "source": "… variants[color=success].borderColor" },
+        { "figma": "components:MuiChip/success/backgroundColor", "code": "green[50] / green[900]", "source": "… variants[color=success].backgroundColor" },
+        { "figma": "components:MuiChip/success/label/color", "code": "green[500] / green[300]", "source": "… variants[color=success]['& .MuiChip-label'].color" },
+        { "figma": "components:MuiChip/error/borderColor", "code": "red[100] / red[800]", "source": "… variants[color=error].borderColor" },
+        { "figma": "components:MuiChip/error/backgroundColor", "code": "red[50] / red[900]", "source": "… variants[color=error].backgroundColor" },
+        { "figma": "components:MuiChip/error/label/color", "code": "red[500] / red[200]", "source": "… variants[color=error]['& .MuiChip-label'].color" },
+        { "figma": "spacing:spacing/1", "code": "MUI default label padding (size=small)" },
+        { "figma": "spacing:spacing/1-5", "code": "MUI default label padding (size=medium)" },
+        { "figma": null, "code": "borderRadius '999px'", "source": "MuiChip.styleOverrides.root.borderRadius", "note": "Not a token; set directly in Figma too." }
+      ],
+      "mismatches": [
+        "Code styles a chip icon for each color; the Figma Chip has no icon property.",
+        "The Figma label overrides typography/caption to Semi Bold, so it is no longer linked to the text style (code: caption size, fontWeight 600)."
+      ]
+    },
+    {
+      "name": "MenuButton",
+      "status": "mapped",
+      "figma": { "nodeId": "7:5", "type": "COMPONENT", "page": "Molecules", "url": "https://www.figma.com/design/bkJTRjUSYRIpiB1AGq73an/MUI-Dashboard-Design-System-v9.5.0?node-id=7-5" },
+      "code": { "import": "@templates/dashboard/components/MenuButton", "export": "default", "exportName": "MenuButton", "propsType": "MenuButtonProps", "file": "dashboard/components/MenuButton.tsx", "overrides": null },
+      "storybook": { "docsId": "molecules-menubutton--docs", "storyIds": ["molecules-menubutton--default", "molecules-menubutton--with-badge", "molecules-menubutton--menu", "molecules-menubutton--options"] },
+      "variants": { "axes": [], "nodes": [] },
+      "props": [
+        { "figma": "showBadge", "figmaType": "BOOLEAN", "code": "showBadge", "match": "exact", "note": "Default false on both sides." },
+        { "figma": "IconButton › children (exposed nested instance)", "figmaType": "INSTANCE_SWAP", "code": "children", "match": "exact" },
+        { "figma": null, "code": "...IconButtonProps (e.g. aria-label, onClick)", "match": "code-only", "note": "MenuButtonProps extends IconButtonProps; IconButton is fixed at size=\"small\"." }
+      ],
+      "tokens": [
+        { "figma": "palette:error/main", "code": "palette.error.main", "source": "<Badge color=\"error\" variant=\"dot\"> in MenuButton.tsx" },
+        { "figma": "(nested IconButton tokens)", "code": "see IconButton" }
+      ],
+      "mismatches": [
+        "The Badge dot is a plain ellipse in Figma, not a Badge component."
+      ]
+    },
+    {
+      "name": "Search",
+      "status": "mapped",
+      "figma": { "nodeId": "7:11", "type": "COMPONENT", "page": "Molecules", "url": "https://www.figma.com/design/bkJTRjUSYRIpiB1AGq73an/MUI-Dashboard-Design-System-v9.5.0?node-id=7-11" },
+      "code": { "import": "@templates/dashboard/components/Search", "export": "default", "exportName": "Search", "propsType": null, "file": "dashboard/components/Search.tsx", "overrides": null },
+      "storybook": { "docsId": "molecules-search--docs", "storyIds": ["molecules-search--default", "molecules-search--focused"] },
+      "variants": { "axes": [], "nodes": [] },
+      "props": [],
+      "tokens": [
+        { "figma": "(nested OutlinedInput size=small tokens)", "code": "see OutlinedInput" },
+        { "figma": "palette:text/primary", "code": "palette.text.primary", "source": "<InputAdornment sx={{ color: 'text.primary' }}> in Search.tsx", "note": "Applied as an override on the nested adornment icon in Figma." }
+      ],
+      "mismatches": [
+        "Figma width is a fixed 220px; code is 25ch from md up and 100% below.",
+        "Code has a focused state (molecules-search--focused); Figma does not."
+      ]
+    },
+    {
+      "name": "StatCard",
+      "status": "mapped",
+      "figma": { "nodeId": "7:53", "type": "COMPONENT_SET", "page": "Molecules", "variantCount": 3, "url": "https://www.figma.com/design/bkJTRjUSYRIpiB1AGq73an/MUI-Dashboard-Design-System-v9.5.0?node-id=7-53" },
+      "code": { "import": "@templates/dashboard/components/StatCard", "export": "default", "exportName": "StatCard", "propsType": "StatCardProps", "file": "dashboard/components/StatCard.tsx", "overrides": "shared-theme/customizations/surfaces.ts › surfacesCustomizations.MuiCard" },
+      "storybook": { "docsId": "molecules-statcard--docs", "storyIds": ["molecules-statcard--up", "molecules-statcard--down", "molecules-statcard--neutral"] },
+      "variants": {
+        "axes": [
+          { "figma": "trend", "code": "trend", "values": ["up", "down", "neutral"], "match": "exact" }
+        ],
+        "nodes": [
+          { "figma": "trend=up", "nodeId": "7:17", "storyId": "molecules-statcard--up" },
+          { "figma": "trend=down", "nodeId": "7:29", "storyId": "molecules-statcard--down" },
+          { "figma": "trend=neutral", "nodeId": "7:41", "storyId": "molecules-statcard--neutral" }
+        ]
+      },
+      "props": [
+        { "figma": "title", "figmaType": "TEXT", "code": "title", "match": "exact" },
+        { "figma": "value", "figmaType": "TEXT", "code": "value", "match": "exact" },
+        { "figma": "interval", "figmaType": "TEXT", "code": "interval", "match": "exact" },
+        { "figma": null, "code": "data", "match": "code-only", "note": "number[] for the SparkLineChart; Figma draws a static sparkline per trend." }
+      ],
+      "tokens": [
+        { "figma": "components:MuiCard/outlined/backgroundColor", "code": "'hsl(0, 0%, 100%)' / alpha(gray[900], 0.4)", "source": "surfaces.ts › MuiCard.styleOverrides.root.variants[variant=outlined].background" },
+        { "figma": "palette:divider", "code": "palette.divider", "source": "MuiCard root.border" },
+        { "figma": "shape:borderRadius", "code": "shape.borderRadius", "source": "MuiCard root.borderRadius" },
+        { "figma": "spacing:spacing/2", "code": "padding 16", "source": "MuiCard root.padding" },
+        { "figma": "spacing:spacing/1", "code": "Stack gap 1", "source": "StatCard.tsx" },
+        { "figma": "spacing:spacing/0-5", "code": "title gutterBottom (0.35em)", "match": "approximate" },
+        { "figma": "palette:text/primary", "code": "palette.text.primary (title, value)" },
+        { "figma": "palette:text/secondary", "code": "palette.text.secondary (interval)", "source": "StatCard.tsx sx color" },
+        { "figma": "components:StatCard/trendColors/up", "code": "success.main / success.dark", "source": "StatCard.tsx › trendColors.up" },
+        { "figma": "components:StatCard/trendColors/down", "code": "error.main / error.dark", "source": "StatCard.tsx › trendColors.down" },
+        { "figma": "components:StatCard/trendColors/neutral", "code": "grey[400] / grey[700]", "source": "StatCard.tsx › trendColors.neutral" },
+        { "figma": "typography/subtitle2", "code": "Typography variant=\"subtitle2\" (title)" },
+        { "figma": "typography/h4", "code": "Typography variant=\"h4\" (value)" },
+        { "figma": "typography/caption", "code": "Typography variant=\"caption\" (interval)" },
+        { "figma": "(nested Chip)", "code": "Chip color success | error | default, labels +25% | -25% | +5%", "source": "StatCard.tsx › labelColors, trendValues" }
+      ],
+      "mismatches": [
+        "Code takes a data prop for a live SparkLineChart; Figma has a static vector per trend.",
+        "Code fills the sparkline area with AreaGradient (0.3 to 0 opacity); Figma uses a flat 15% fill.",
+        "StatCard/trendColors/* are Figma variables; in code they are values computed in StatCard.tsx, not tokens.",
+        "Figma text defaults are the same in every trend variant (Users / 14k)."
+      ]
+    },
+    {
+      "name": "Header",
+      "status": "mapped",
+      "figma": { "nodeId": "8:3", "type": "COMPONENT", "page": "Organisms", "url": "https://www.figma.com/design/bkJTRjUSYRIpiB1AGq73an/MUI-Dashboard-Design-System-v9.5.0?node-id=8-3" },
+      "code": { "import": "@templates/dashboard/components/Header", "export": "default", "exportName": "Header", "propsType": null, "file": "dashboard/components/Header.tsx", "overrides": null },
+      "storybook": { "docsId": "organisms-header--docs", "storyIds": ["organisms-header--default"] },
+      "variants": { "axes": [], "nodes": [] },
+      "props": [],
+      "children": [
+        { "figma": "NavbarBreadcrumbs (frame)", "code": "dashboard/components/NavbarBreadcrumbs.tsx", "match": "code-only", "note": "No Figma component; built as a frame inside Header." },
+        { "figma": "Search (instance)", "code": "dashboard/components/Search.tsx", "match": "exact" },
+        { "figma": "CustomDatePicker (Button instance: outlined, small, CalendarTodayRounded)", "code": "dashboard/components/CustomDatePicker.tsx", "match": "approximate", "note": "No Figma component of its own." },
+        { "figma": "MenuButton (instance, showBadge)", "code": "dashboard/components/MenuButton.tsx", "match": "exact" },
+        { "figma": "ColorModeIconDropdown (IconButton instance, small)", "code": "shared-theme/ColorModeIconDropdown.tsx", "match": "approximate", "note": "No Figma component of its own." }
+      ],
+      "tokens": [
+        { "figma": "spacing:spacing/1-5", "code": "pt: 1.5", "source": "Header.tsx" },
+        { "figma": "spacing:spacing/1", "code": "Stack gap 1; NavbarBreadcrumbs margin theme.spacing(1, 0)", "source": "Header.tsx, NavbarBreadcrumbs.tsx" },
+        { "figma": "palette:text/primary", "code": "palette.text.primary (Home)", "source": "NavbarBreadcrumbs.tsx" },
+        { "figma": "palette:text/secondary", "code": "Breadcrumbs default color (Dashboard)" },
+        { "figma": "palette:action/disabled", "code": "palette.action.disabled (separator)", "source": "NavbarBreadcrumbs.tsx › breadcrumbsClasses.separator", "note": "MUI default value." },
+        { "figma": "typography/body1", "code": "Typography variant=\"body1\"", "source": "NavbarBreadcrumbs.tsx" }
+      ],
+      "mismatches": [
+        "CustomDatePicker and ColorModeIconDropdown are static buttons in Figma; in code they open a date picker and a System / Light / Dark menu.",
+        "Code hides Header below the md breakpoint; Figma has one desktop layout.",
+        "NavbarBreadcrumbs, CustomDatePicker and ColorModeIconDropdown are code components with no Figma component."
+      ]
+    },
+    {
+      "name": "Icons",
+      "status": "mapped",
+      "figma": { "nodeId": "4:2", "type": "FRAME", "page": "Atoms", "note": "Frame holding one COMPONENT per icon.", "url": "https://www.figma.com/design/bkJTRjUSYRIpiB1AGq73an/MUI-Dashboard-Design-System-v9.5.0?node-id=4-2" },
+      "code": { "import": "@mui/icons-material/<Name>", "export": "default", "file": null, "overrides": "MuiIcon.defaultProps.fontSize 'small' in shared-theme/customizations/dataDisplay.tsx" },
+      "storybook": { "docsId": "foundations-icons--docs", "storyIds": ["foundations-icons--all"] },
+      "variants": {
+        "axes": [
+          { "figma": null, "code": "fontSize", "values": ["small", "medium"], "match": "code-only", "note": "Figma icons are 24px components; resize instances (20px small, 16px for 1rem)." }
+        ],
+        "nodes": []
+      },
+      "props": [],
+      "tokens": [
+        { "figma": "palette:text/primary", "code": "currentColor (inherits text color)", "match": "approximate" }
+      ],
+      "items": [
+        { "name": "AddRounded", "nodeId": "4:5", "import": "@mui/icons-material/AddRounded" },
+        { "name": "AnalyticsRounded", "nodeId": "4:8", "import": "@mui/icons-material/AnalyticsRounded" },
+        { "name": "AssignmentRounded", "nodeId": "4:11", "import": "@mui/icons-material/AssignmentRounded" },
+        { "name": "AutoAwesomeRounded", "nodeId": "4:14", "import": "@mui/icons-material/AutoAwesomeRounded" },
+        { "name": "CalendarTodayRounded", "nodeId": "4:17", "import": "@mui/icons-material/CalendarTodayRounded" },
+        { "name": "CheckBoxOutlineBlankRounded", "nodeId": "4:20", "import": "@mui/icons-material/CheckBoxOutlineBlankRounded" },
+        { "name": "CheckRounded", "nodeId": "4:23", "import": "@mui/icons-material/CheckRounded" },
+        { "name": "ChevronRightRounded", "nodeId": "4:26", "import": "@mui/icons-material/ChevronRightRounded" },
+        { "name": "ConstructionRounded", "nodeId": "4:29", "import": "@mui/icons-material/ConstructionRounded" },
+        { "name": "DarkModeRounded", "nodeId": "4:32", "import": "@mui/icons-material/DarkModeRounded" },
+        { "name": "DashboardRounded", "nodeId": "4:35", "import": "@mui/icons-material/DashboardRounded" },
+        { "name": "DevicesRounded", "nodeId": "4:38", "import": "@mui/icons-material/DevicesRounded" },
+        { "name": "HelpRounded", "nodeId": "4:41", "import": "@mui/icons-material/HelpRounded" },
+        { "name": "HomeRounded", "nodeId": "4:44", "import": "@mui/icons-material/HomeRounded" },
+        { "name": "InfoRounded", "nodeId": "4:47", "import": "@mui/icons-material/InfoRounded" },
+        { "name": "InsightsRounded", "nodeId": "4:51", "import": "@mui/icons-material/InsightsRounded" },
+        { "name": "LightModeRounded", "nodeId": "4:54", "import": "@mui/icons-material/LightModeRounded" },
+        { "name": "LogoutRounded", "nodeId": "4:58", "import": "@mui/icons-material/LogoutRounded" },
+        { "name": "MenuRounded", "nodeId": "4:61", "import": "@mui/icons-material/MenuRounded" },
+        { "name": "MoreVertRounded", "nodeId": "4:64", "import": "@mui/icons-material/MoreVertRounded" },
+        { "name": "NavigateNextRounded", "nodeId": "4:67", "import": "@mui/icons-material/NavigateNextRounded" },
+        { "name": "NotificationsRounded", "nodeId": "4:70", "import": "@mui/icons-material/NotificationsRounded" },
+        { "name": "PeopleRounded", "nodeId": "4:73", "import": "@mui/icons-material/PeopleRounded" },
+        { "name": "RemoveRounded", "nodeId": "4:76", "import": "@mui/icons-material/RemoveRounded" },
+        { "name": "SearchRounded", "nodeId": "4:79", "import": "@mui/icons-material/SearchRounded" },
+        { "name": "SettingsRounded", "nodeId": "4:82", "import": "@mui/icons-material/SettingsRounded" },
+        { "name": "SmartphoneRounded", "nodeId": "4:85", "import": "@mui/icons-material/SmartphoneRounded" },
+        { "name": "UnfoldMoreRounded", "nodeId": "4:88", "import": "@mui/icons-material/UnfoldMoreRounded" }
+      ],
+      "mismatches": [
+        "Figma has no size variants; code uses the fontSize prop (small 20px, medium 24px)."
+      ]
+    }
+  ],
+  "unmapped": []
+}

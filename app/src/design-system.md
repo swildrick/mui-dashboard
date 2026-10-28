@@ -1,6 +1,6 @@
 # Design system
 
-The design system for the dashboard template: one MUI theme built from tokens in `themePrimitives.ts` and component overrides in the customization files. Read this before changing any UI, styling or component code.
+The design system for the dashboard template: one MUI theme built from tokens in `themePrimitives.ts` and component overrides in the customization files. Read this before changing any UI, styling or component code, together with `app/src/design-system.map.json`, which maps each Figma component to its code, Storybook stories, variants, props and tokens.
 
 Paths below are relative to `docs/data/material/getting-started/templates/` unless they start with `app/`.
 
