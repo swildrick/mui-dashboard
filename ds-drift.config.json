@@ -1,0 +1,17 @@
+{
+  "name": "MUI dashboard template (v9.5.0)",
+  "componentsPkg": "@mui/material",
+  "tsconfig": "app/tsconfig.json",
+  "tokensFile": "docs/data/material/getting-started/templates/shared-theme/themePrimitives.ts",
+  "include": [
+    "docs/data/material/getting-started/templates/dashboard/**",
+    "docs/data/material/getting-started/templates/shared-theme/**"
+  ],
+  "exclude": [
+    "docs/data/material/getting-started/templates/**/*.js"
+  ],
+  "allow": {
+    "imports": ["react", "react-dom", "dayjs", "clsx", "prop-types", "@react-spring/web"]
+  },
+  "a11y": { "formContext": ["FormControlLabel"] }
+}

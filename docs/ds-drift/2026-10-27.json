@@ -1,0 +1,478 @@
+{
+  "schema": "ds-drift/1",
+  "generatedAt": "2026-10-27T22:18:33.432Z",
+  "date": "2026-10-27",
+  "project": {
+    "name": "MUI dashboard template (v9.5.0)",
+    "root": "."
+  },
+  "system": {
+    "componentsPkg": "@mui/material",
+    "catalog": "typescript",
+    "tokenSources": [
+      "docs/data/material/getting-started/templates/shared-theme/themePrimitives.ts"
+    ],
+    "resolved": {
+      "@mui/material": "app\\node_modules\\@mui\\material\\index.d.mts",
+      "@mui/material/styles": "app\\node_modules\\@mui\\material\\styles\\index.d.mts",
+      "@mui/material/CssBaseline": "app\\node_modules\\@mui\\material\\CssBaseline\\index.d.mts",
+      "@mui/material/Box": "app\\node_modules\\@mui\\material\\Box\\index.d.mts",
+      "@mui/material/Stack": "app\\node_modules\\@mui\\material\\Stack\\index.d.mts",
+      "@mui/material/AppBar": "app\\node_modules\\@mui\\material\\AppBar\\index.d.mts",
+      "@mui/material/Toolbar": "app\\node_modules\\@mui\\material\\Toolbar\\index.d.mts",
+      "@mui/material/Tabs": "app\\node_modules\\@mui\\material\\Tabs\\index.d.mts",
+      "@mui/material/Typography": "app\\node_modules\\@mui\\material\\Typography\\index.d.mts",
+      "@mui/material/Card": "app\\node_modules\\@mui\\material\\Card\\index.d.mts",
+      "@mui/material/CardContent": "app\\node_modules\\@mui\\material\\CardContent\\index.d.mts",
+      "@mui/material/Button": "app\\node_modules\\@mui\\material\\Button\\index.d.mts",
+      "@mui/material/LinearProgress": "app\\node_modules\\@mui\\material\\LinearProgress\\index.d.mts",
+      "@mui/material/utils": "app\\node_modules\\@mui\\material\\utils\\index.d.mts",
+      "@mui/material/transitions": "app\\node_modules\\@mui\\material\\transitions\\index.d.mts",
+      "@mui/material/Collapse": "app\\node_modules\\@mui\\material\\Collapse\\index.d.mts",
+      "@mui/material/useMediaQuery": "app\\node_modules\\@mui\\material\\useMediaQuery\\index.d.mts",
+      "@mui/material/Grid": "app\\node_modules\\@mui\\material\\Grid\\index.d.mts",
+      "@mui/material/Badge": "app\\node_modules\\@mui\\material\\Badge\\index.d.mts",
+      "@mui/material/IconButton": "app\\node_modules\\@mui\\material\\IconButton\\index.d.mts",
+      "@mui/material/List": "app\\node_modules\\@mui\\material\\List\\index.d.mts",
+      "@mui/material/ListItem": "app\\node_modules\\@mui\\material\\ListItem\\index.d.mts",
+      "@mui/material/ListItemButton": "app\\node_modules\\@mui\\material\\ListItemButton\\index.d.mts",
+      "@mui/material/ListItemIcon": "app\\node_modules\\@mui\\material\\ListItemIcon\\index.d.mts",
+      "@mui/material/ListItemText": "app\\node_modules\\@mui\\material\\ListItemText\\index.d.mts",
+      "@mui/material/Breadcrumbs": "app\\node_modules\\@mui\\material\\Breadcrumbs\\index.d.mts",
+      "@mui/material/Divider": "app\\node_modules\\@mui\\material\\Divider\\index.d.mts",
+      "@mui/material/Menu": "app\\node_modules\\@mui\\material\\Menu\\index.d.mts",
+      "@mui/material/MenuItem": "app\\node_modules\\@mui\\material\\MenuItem\\index.d.mts",
+      "@mui/material/Paper": "app\\node_modules\\@mui\\material\\Paper\\index.d.mts",
+      "@mui/material/Chip": "app\\node_modules\\@mui\\material\\Chip\\index.d.mts",
+      "@mui/material/FormControl": "app\\node_modules\\@mui\\material\\FormControl\\index.d.mts",
+      "@mui/material/InputAdornment": "app\\node_modules\\@mui\\material\\InputAdornment\\index.d.mts",
+      "@mui/material/OutlinedInput": "app\\node_modules\\@mui\\material\\OutlinedInput\\index.d.mts",
+      "@mui/material/Avatar": "app\\node_modules\\@mui\\material\\Avatar\\index.d.mts",
+      "@mui/material/ListItemAvatar": "app\\node_modules\\@mui\\material\\ListItemAvatar\\index.d.mts",
+      "@mui/material/ListSubheader": "app\\node_modules\\@mui\\material\\ListSubheader\\index.d.mts",
+      "@mui/material/Select": "app\\node_modules\\@mui\\material\\Select\\index.d.mts",
+      "@mui/material/Drawer": "app\\node_modules\\@mui\\material\\Drawer\\index.d.mts",
+      "@mui/material/Link": "app\\node_modules\\@mui\\material\\Link\\index.d.mts",
+      "@mui/material/SvgIcon": "app\\node_modules\\@mui\\material\\SvgIcon\\index.d.mts",
+      "@mui/material/ButtonBase": "app\\node_modules\\@mui\\material\\ButtonBase\\index.d.mts",
+      "@mui/material/ToggleButtonGroup": "app\\node_modules\\@mui\\material\\ToggleButtonGroup\\index.d.mts",
+      "@mui/material/ToggleButton": "app\\node_modules\\@mui\\material\\ToggleButton\\index.d.mts",
+      "@mui/material/Tab": "app\\node_modules\\@mui\\material\\Tab\\index.d.mts"
+    }
+  },
+  "scope": {
+    "mode": "full",
+    "filesScanned": 37,
+    "styleFilesScanned": 0
+  },
+  "summary": {
+    "score": 97,
+    "gate": "review",
+    "dimensions": {
+      "imports": {
+        "score": 100,
+        "gate": "pass",
+        "findings": 0,
+        "filesChecked": 36
+      },
+      "apiFidelity": {
+        "score": 100,
+        "gate": "pass",
+        "findings": 0,
+        "filesChecked": 35
+      },
+      "tokenDiscipline": {
+        "score": 88,
+        "gate": "review",
+        "findings": 26,
+        "filesChecked": 22
+      },
+      "a11yStatic": {
+        "score": 98,
+        "gate": "review",
+        "findings": 3,
+        "filesChecked": 29
+      }
+    },
+    "adoption": {
+      "uiFiles": 29,
+      "usingSystem": 28,
+      "percent": 97,
+      "notUsing": [
+        "docs/data/material/getting-started/templates/dashboard/components/CustomizedDataGrid.tsx"
+      ]
+    },
+    "counts": {
+      "total": 29,
+      "fail": 0,
+      "review": 29,
+      "info": 0
+    }
+  },
+  "notes": [],
+  "topFiles": [
+    {
+      "file": "docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx",
+      "findings": 8
+    },
+    {
+      "file": "docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx",
+      "findings": 6
+    },
+    {
+      "file": "docs/data/material/getting-started/templates/dashboard/components/CustomizedTreeView.tsx",
+      "findings": 3
+    },
+    {
+      "file": "docs/data/material/getting-started/templates/dashboard/components/SideMenu.tsx",
+      "findings": 3
+    },
+    {
+      "file": "docs/data/material/getting-started/templates/dashboard/internals/data/gridData.tsx",
+      "findings": 3
+    },
+    {
+      "file": "docs/data/material/getting-started/templates/dashboard/components/ChartUserByCountry.tsx",
+      "findings": 1
+    },
+    {
+      "file": "docs/data/material/getting-started/templates/dashboard/components/Header.tsx",
+      "findings": 1
+    },
+    {
+      "file": "docs/data/material/getting-started/templates/dashboard/components/HighlightedCard.tsx",
+      "findings": 1
+    },
+    {
+      "file": "docs/data/material/getting-started/templates/dashboard/components/MainGrid.tsx",
+      "findings": 1
+    },
+    {
+      "file": "docs/data/material/getting-started/templates/dashboard/components/MenuButton.tsx",
+      "findings": 1
+    }
+  ],
+  "findings": [
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:borderBottom=1px solid",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx",
+      "line": 46,
+      "symbol": "borderBottom=1px solid",
+      "message": "Inline style borderBottom: '1px solid' in docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:46 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'borderBottom'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:top=var(--template-frame-height, 0px)",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx",
+      "line": 48,
+      "symbol": "top=var(--template-frame-height, 0px)",
+      "message": "Inline style top: 'var(--template-frame-height, 0px)' in docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:48 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'top'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:width=1.5rem",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx",
+      "line": 86,
+      "symbol": "width=1.5rem",
+      "message": "Inline style width: '1.5rem' in docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:86 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'width'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:height=1.5rem",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx",
+      "line": 87,
+      "symbol": "height=1.5rem",
+      "message": "Inline style height: '1.5rem' in docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:87 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'height'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:borderRadius=999px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx",
+      "line": 89,
+      "symbol": "borderRadius=999px",
+      "message": "Inline style borderRadius: '999px' in docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:89 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'borderRadius'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:border=1px solid",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx",
+      "line": 97,
+      "symbol": "border=1px solid",
+      "message": "Inline style border: '1px solid' in docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:97 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'border'."
+    },
+    {
+      "id": "raw-color:docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:boxShadow=inset 0 2px 5px rgba(255, 255, 255, 0.3)",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-color",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx",
+      "line": 99,
+      "symbol": "boxShadow=inset 0 2px 5px rgba(255, 255, 255, 0.3)",
+      "message": "Inline style boxShadow: 'inset 0 2px 5px rgba(255, 255, 255, 0.3)' in docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:99 bypasses design tokens",
+      "fix": "Use a design system color token instead of a raw value for 'boxShadow'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:fontSize=1rem",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx",
+      "line": 102,
+      "symbol": "fontSize=1rem",
+      "message": "Inline style fontSize: '1rem' in docs/data/material/getting-started/templates/dashboard/components/AppNavbar.tsx:102 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'fontSize'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/ChartUserByCountry.tsx:gap=8px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/ChartUserByCountry.tsx",
+      "line": 128,
+      "symbol": "gap=8px",
+      "message": "Inline style gap: '8px' in docs/data/material/getting-started/templates/dashboard/components/ChartUserByCountry.tsx:128 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'gap'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/CustomizedTreeView.tsx:gap=8px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/CustomizedTreeView.tsx",
+      "line": 183,
+      "symbol": "gap=8px",
+      "message": "Inline style gap: '8px' in docs/data/material/getting-started/templates/dashboard/components/CustomizedTreeView.tsx:183 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'gap'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/CustomizedTreeView.tsx:m=0 -8px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/CustomizedTreeView.tsx",
+      "line": 196,
+      "symbol": "m=0 -8px",
+      "message": "Inline style m: '0 -8px' in docs/data/material/getting-started/templates/dashboard/components/CustomizedTreeView.tsx:196 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'm'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/CustomizedTreeView.tsx:pb=8px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/CustomizedTreeView.tsx",
+      "line": 197,
+      "symbol": "pb=8px",
+      "message": "Inline style pb: '8px' in docs/data/material/getting-started/templates/dashboard/components/CustomizedTreeView.tsx:197 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'pb'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/Header.tsx:md=1700px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/Header.tsx",
+      "line": 19,
+      "symbol": "md=1700px",
+      "message": "Inline style md: '1700px' in docs/data/material/getting-started/templates/dashboard/components/Header.tsx:19 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'md'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/HighlightedCard.tsx:mb=8px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/HighlightedCard.tsx",
+      "line": 26,
+      "symbol": "mb=8px",
+      "message": "Inline style mb: '8px' in docs/data/material/getting-started/templates/dashboard/components/HighlightedCard.tsx:26 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'mb'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/MainGrid.tsx:md=1700px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/MainGrid.tsx",
+      "line": 49,
+      "symbol": "md=1700px",
+      "message": "Inline style md: '1700px' in docs/data/material/getting-started/templates/dashboard/components/MainGrid.tsx:49 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'md'."
+    },
+    {
+      "id": "control-has-name:docs/data/material/getting-started/templates/dashboard/components/MenuButton.tsx:IconButton",
+      "dimension": "a11yStatic",
+      "rule": "control-has-name",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/MenuButton.tsx",
+      "line": 19,
+      "symbol": "IconButton",
+      "message": "<IconButton> icon-only or empty control has no accessible name in docs/data/material/getting-started/templates/dashboard/components/MenuButton.tsx:19",
+      "fix": "Associate a <label htmlFor> / aria-label, or put the control inside FormField."
+    },
+    {
+      "id": "control-has-name:docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:Select",
+      "dimension": "a11yStatic",
+      "rule": "control-has-name",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx",
+      "line": 37,
+      "symbol": "Select",
+      "message": "<Select> form control has no accessible name in docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:37",
+      "fix": "Associate a <label htmlFor> / aria-label, or put the control inside FormField."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:p=8px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx",
+      "line": 49,
+      "symbol": "p=8px",
+      "message": "Inline style p: '8px' in docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:49 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'p'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:fontSize=1rem",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx",
+      "line": 63,
+      "symbol": "fontSize=1rem",
+      "message": "Inline style fontSize: '1rem' in docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:63 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'fontSize'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:fontSize=1rem#2",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx",
+      "line": 71,
+      "symbol": "fontSize=1rem",
+      "message": "Inline style fontSize: '1rem' in docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:71 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'fontSize'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:fontSize=1rem#3",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx",
+      "line": 79,
+      "symbol": "fontSize=1rem",
+      "message": "Inline style fontSize: '1rem' in docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:79 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'fontSize'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:fontSize=1rem#4",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx",
+      "line": 88,
+      "symbol": "fontSize=1rem",
+      "message": "Inline style fontSize: '1rem' in docs/data/material/getting-started/templates/dashboard/components/SelectContent.tsx:88 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'fontSize'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/SideMenu.tsx:mt=calc(var(--template-frame-height, 0px) + 4px)",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/SideMenu.tsx",
+      "line": 40,
+      "symbol": "mt=calc(var(--template-frame-height, 0px) + 4px)",
+      "message": "Inline style mt: 'calc(var(--template-frame-height, 0px) + 4px)' in docs/data/material/getting-started/templates/dashboard/components/SideMenu.tsx:40 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'mt'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/SideMenu.tsx:borderTop=1px solid",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/SideMenu.tsx",
+      "line": 64,
+      "symbol": "borderTop=1px solid",
+      "message": "Inline style borderTop: '1px solid' in docs/data/material/getting-started/templates/dashboard/components/SideMenu.tsx:64 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'borderTop'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/components/SideMenu.tsx:lineHeight=16px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/components/SideMenu.tsx",
+      "line": 75,
+      "symbol": "lineHeight=16px",
+      "message": "Inline style lineHeight: '16px' in docs/data/material/getting-started/templates/dashboard/components/SideMenu.tsx:75 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'lineHeight'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/internals/data/gridData.tsx:width=24px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/internals/data/gridData.tsx",
+      "line": 70,
+      "symbol": "width=24px",
+      "message": "Inline style width: '24px' in docs/data/material/getting-started/templates/dashboard/internals/data/gridData.tsx:70 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'width'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/internals/data/gridData.tsx:height=24px",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/internals/data/gridData.tsx",
+      "line": 71,
+      "symbol": "height=24px",
+      "message": "Inline style height: '24px' in docs/data/material/getting-started/templates/dashboard/internals/data/gridData.tsx:71 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'height'."
+    },
+    {
+      "id": "raw-dimension:docs/data/material/getting-started/templates/dashboard/internals/data/gridData.tsx:fontSize=0.85rem",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/dashboard/internals/data/gridData.tsx",
+      "line": 72,
+      "symbol": "fontSize=0.85rem",
+      "message": "Inline style fontSize: '0.85rem' in docs/data/material/getting-started/templates/dashboard/internals/data/gridData.tsx:72 bypasses design tokens",
+      "fix": "Use a design system spacing/sizing token instead of a raw value for 'fontSize'."
+    },
+    {
+      "id": "control-has-name:docs/data/material/getting-started/templates/shared-theme/ColorModeSelect.tsx:Select",
+      "dimension": "a11yStatic",
+      "rule": "control-has-name",
+      "severity": "review",
+      "file": "docs/data/material/getting-started/templates/shared-theme/ColorModeSelect.tsx",
+      "line": 11,
+      "symbol": "Select",
+      "message": "<Select> form control has no accessible name in docs/data/material/getting-started/templates/shared-theme/ColorModeSelect.tsx:11",
+      "fix": "Associate a <label htmlFor> / aria-label, or put the control inside FormField."
+    }
+  ],
+  "delta": null,
+  "interpretation": "This is the upstream MUI template, so drift here is a style choice by its authors, not agent error. Imports and API fidelity are clean: every component and prop exists in @mui/material 9.5.0. All 29 findings are review level.\n\n- Token discipline (26 findings) is nearly all raw sx values: string pixel and rem sizes ('8px', '1rem', '1.5rem', '24px') where the theme spacing scale and typography variants already cover them. AppNavbar.tsx and SelectContent.tsx carry 14 of them. p: '8px' is theme.spacing(1), and fontSize: '1rem' repeats body1. The one raw color, the inset rgba boxShadow in AppNavbar.tsx, has no matching token in themePrimitives.ts.\n- Some are expected: '1px solid' borders pick up their color from theme.palette.divider, and --template-frame-height is a layout variable, not a token.\n- Accessibility (3 findings) is mostly noise. SelectContent.tsx already sets inputProps aria-label. MenuButton.tsx and ColorModeSelect.tsx are wrappers that forward props, so the label comes from callers. The real gap the scanner points at is a caller: SideMenuMobile.tsx renders <MenuButton showBadge> with no aria-label.\n\nFix first:\n- Add aria-label=\"Open notifications\" to the MenuButton in SideMenuMobile.tsx.\n- Replace string px/rem in AppNavbar.tsx and SelectContent.tsx with spacing numbers (p: 1, gap: 1) and typography variants.\n- Move the AppNavbar boxShadow into themePrimitives.ts as a named shadow.\n\nThe three a11y findings on prop-forwarding wrappers are known noise for this repo; no config field targets them, so expect them on every run until the wrappers set a default label."
+}

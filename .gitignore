@@ -1,0 +1,29 @@
+# This folder started as a sparse checkout of mui/material-ui (still available as
+# the local branch v9.5.0-local and the remote "upstream"). Only the files below
+# belong to this repository; the other root files come from the MUI monorepo.
+/*
+!/.gitignore
+!/.github/
+!/README.md
+!/LICENSE
+!/CLAUDE.md
+!/ds-drift.config.json
+!/app/
+!/docs/
+/docs/*
+!/docs/ds-drift/
+!/docs/data/
+/docs/data/*
+!/docs/data/material/
+/docs/data/material/*
+!/docs/data/material/getting-started/
+/docs/data/material/getting-started/*
+!/docs/data/material/getting-started/templates/
+
+# app build output and dependencies
+app/node_modules/
+app/dist/
+app/storybook-static/
+
+*.log
+.DS_Store

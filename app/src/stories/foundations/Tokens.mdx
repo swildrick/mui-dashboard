@@ -1,0 +1,55 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/addon-docs/blocks';
+import { brand, gray, green, orange, red } from '@templates/shared-theme/themePrimitives';
+import { PaletteTable, TypographyTable, SpacingTable, ShapeAndShadows } from './TokenTables';
+import { figmaUrl } from '../figma';
+
+<Meta title="Foundations/Tokens" />
+
+# Tokens
+
+Every value on this page is imported from `shared-theme/themePrimitives.ts` at build time, so it always matches the code. `AppTheme` turns them into CSS variables prefixed `--template-` and switches light and dark with the `data-mui-color-scheme` attribute.
+
+<a href={figmaUrl('0:1')} target="_blank" rel="noreferrer">Open the Foundations page in Figma</a> · Rules for using these tokens: `app/src/design-system.md`.
+
+## Color scales
+
+Five scales exported from `themePrimitives.ts`. Import them (for example `import { gray } from '.../themePrimitives'`) instead of writing raw HSL values.
+
+<ColorPalette>
+  <ColorItem title="brand" subtitle="brand[50…900]" colors={brand} />
+  <ColorItem title="gray" subtitle="gray[50…900] (also palette.grey)" colors={gray} />
+  <ColorItem title="green" subtitle="green[50…900]" colors={green} />
+  <ColorItem title="orange" subtitle="orange[50…900]" colors={orange} />
+  <ColorItem title="red" subtitle="red[50…900]" colors={red} />
+</ColorPalette>
+
+## Palette
+
+`colorSchemes.light.palette` and `colorSchemes.dark.palette`. Read these through the theme: `sx={{ color: 'text.secondary' }}` or `(theme.vars || theme).palette.text.secondary`. No `secondary` palette is defined.
+
+<PaletteTable />
+
+## Typography
+
+`typography` in `themePrimitives.ts`, font family `Inter, sans-serif`. Values not listed (some weights and line heights) come from MUI defaults.
+
+<TypographyTable />
+
+## Spacing
+
+MUI's default 8px unit. Use numbers in `sx` (`p: 1`, `gap: 1.5`) or `theme.spacing(n)` in `styled`. These are the steps the dashboard template uses.
+
+<SpacingTable />
+
+## Shape and shadows
+
+<ShapeAndShadows />
+
+## Differences from the Figma file
+
+The Figma variables mirror these tokens, with these exceptions:
+
+- Figma has a `components` collection (48 variables named after override paths, such as `MuiChip/success/backgroundColor`), `StatCard/trendColors/*` and `palette/action/disabled`. These are values inside component overrides or MUI defaults, not tokens in `themePrimitives.ts`, so they are not shown above.
+- Figma spacing variables are named `spacing/0-25`, `spacing/1-5` and so on (Figma does not allow `.` in names) for `theme.spacing(0.25)` and `theme.spacing(1.5)`.
+- `palette.baseShadow` is one value per color scheme in code; Figma has two effect styles, `shadows/baseShadow/light` and `shadows/baseShadow/dark`.
+- Figma text styles fill in MUI default line heights where the code does not set one.
