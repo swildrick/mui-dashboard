@@ -39,7 +39,7 @@ Five scales, each with steps 50 to 900, exported from `themePrimitives.ts`:
 | `orange` | 45 | `hsl(45, 100%, 97%)` | `hsl(45, 90%, 40%)` | `hsl(45, 93%, 12%)` |
 | `red` | 0 | `hsl(0, 100%, 97%)` | `hsl(0, 90%, 40%)` | `hsl(0, 93%, 6%)` |
 
-See the file for every step. `brand` is not monotonic: 600 (`hsl(210, 98%, 55%)`) is lighter than 500.
+See the file for every step. `brand` does not get darker step by step: 600 (`hsl(210, 85.7%, 27.5%)`, `#0A4682`) is darker than 700, and 800 is darker than 900.
 
 ### Palette roles
 
