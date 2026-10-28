@@ -68,7 +68,7 @@ export default function MainGrid() {
         <Grid size={{ xs: 12 }}>
           <SessionsChart />
         </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
+        <Grid size={{ xs: 12 }}>
           <PageViewsBarChart />
         </Grid>
       </Grid>
